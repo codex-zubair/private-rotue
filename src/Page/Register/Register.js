@@ -18,7 +18,11 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         emailSignUp(email,password)
-        .then(result=> alert("Successful!"))
+        .then(result=> {
+            alert("Successful!");
+            form.reset();
+        
+        })
         .catch(error=> console.log(error));
 
         
@@ -62,7 +66,7 @@ const Register = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary">Register</button>
                             </div>
                         </div>
                     </div>
