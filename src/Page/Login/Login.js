@@ -5,6 +5,8 @@ import { AuthContext } from '../../component/UserContext';
 
 const Login = () => {
 
+
+
     const  {emailLogin} = useContext(AuthContext)
 
 
@@ -17,7 +19,9 @@ const Login = () => {
         const email = form.name.value;
         const password = form.password.value;
 
-        emailLogin(email,password);
+        emailLogin(email,password)
+        .then(result=> console.log("login"))
+        .catch(error=> console.log("error"));
    
     }
 

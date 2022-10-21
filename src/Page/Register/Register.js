@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { app } from '../../Firebase/Firebase';
-
+import { AuthContext } from '../../component/UserContext';
 
 
 
@@ -9,7 +8,7 @@ import { app } from '../../Firebase/Firebase';
 const Register = () => {
 
 
-    const  {emailSignUp} = useContext(app)
+    const  {emailSignUp} = useContext(AuthContext)
 
     const submitForm = (event) => {
         event.preventDefault();
@@ -18,9 +17,9 @@ const Register = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-
-        
-        emailSignUp(email,password);
+        emailSignUp(email,password)
+        .then(result=> alert("Successful!"))
+        .catch(error=> console.log(error));
 
         
 
