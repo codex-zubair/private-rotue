@@ -1,9 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../component/UserContext';
 
 const Login = () => {
+
+    const  {name} = useContext(AuthContext)
+
+
+    const formSubmit = (event) => {
+
+        event.preventDefault()
+
+       
+        console.log(name);
+    }
+
+
+
+
+
+
     return (
-        <form>
+        <form onSubmit={formSubmit}>
             <div className="hero min-h-screen bg-base-200">
 
 
@@ -37,9 +55,6 @@ const Login = () => {
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </form>

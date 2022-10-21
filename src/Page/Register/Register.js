@@ -1,14 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
+import { app } from '../../Firebase/Firebase';
 
 
 
 const Register = () => {
 
-
+    const auth = getAuth(app)
 
     const submitForm = (event) => {
         event.preventDefault();
+
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+
+        
 
     }
 
@@ -31,23 +41,18 @@ const Register = () => {
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">User Name</span>
-                                </label>
-                                <input required type="text" name='user-name' className="input input-bordered" />
-                            </div>
+                            
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input required type="text" name='name' placeholder="email" className="input input-bordered" />
+                                <input  type="text" name='email' placeholder="email" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input required name='password' type="text" placeholder="password" className="input input-bordered" />
+                                <input  name='password' type="text" placeholder="password" className="input input-bordered" />
                                 <label className="label">
                                     <Link className="label-text-alt link link-hover">Already Have An Account</Link>
                                 </label>
