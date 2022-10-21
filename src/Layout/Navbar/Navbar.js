@@ -17,9 +17,18 @@ const Navbar = () => {
         <nav>
             <div className="navbar bg-purple-500">
                 <Link to='/home' className="btn btn-ghost normal-case text-xl">Home</Link>
+                {
+                user? <button onClick={handleLogout} className="btn btn-ghost bg-red-400 normal-case text-xl">Sign OUT</button> 
+                
+                : 
+                
+                <div>
                 <Link to= '/login' className="btn btn-ghost normal-case text-xl">Login</Link>
                 <Link to='/register' className="btn btn-ghost normal-case text-xl">Register</Link>
-                <button onClick={handleLogout} className="btn btn-ghost bg-red-400 normal-case text-xl">Sign OUT</button>
+                </div>
+                }
+            
+
                 <p>{user?.email && user.email}</p>
             </div>
         </nav>

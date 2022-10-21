@@ -20,7 +20,7 @@ const Login = () => {
 
         emailLogin(email,password)
         .then(result=> console.log("login"))
-        .catch(error=> console.log("error"));
+        .catch(error=> console.log(error));
    
     }
 
