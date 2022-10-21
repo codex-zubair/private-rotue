@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { createUserWithEmailAndPassword, getAuth} from "firebase/auth";
 import { app } from '../../Firebase/Firebase';
+
+
 
 
 
 const Register = () => {
 
-    const auth = getAuth(app)
+
+    const  {emailSignUp} = useContext(app)
 
     const submitForm = (event) => {
         event.preventDefault();
@@ -17,10 +19,13 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
+        
+        emailSignUp(email,password);
 
         
 
     }
+
 
 
 
