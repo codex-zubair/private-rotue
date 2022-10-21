@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../component/UserContext';
+import React from 'react';
 
 const Home = () => {
-
-
     return (
-        <div style={{marginTop:'10px'}}>
-           
+        <div>
+            <html>This My HOME</html>
         </div>
     );
 };

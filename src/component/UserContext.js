@@ -56,7 +56,6 @@ const UserContext = ({ children }) => {
 
 
 
-
     const authInfo = { emailSignUp, emailLogin, logOut, user}
 
     return (
